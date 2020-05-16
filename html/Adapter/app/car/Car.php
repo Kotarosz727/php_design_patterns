@@ -18,6 +18,11 @@ class GasolineCar implements gasolineEngineInterface
     }
 }
 
+interface ElectricEngineInterface
+{
+    public function electricOutput($ratio);
+}
+
 class ElectricCar implements ElectricEngineInterface
 {
     public function electricOutput($ratio)
@@ -29,11 +34,6 @@ class ElectricCar implements ElectricEngineInterface
     {
         echo sprintf("出力: %s", $this->electricOutput(100));
     }
-}
-
-interface ElectricEngineInterface
-{
-    public function electricOutput($ratio);
 }
 
 //HybridCar(ガソリン車の機能を受け継ぎつつ（継承）、電気自動車の機能も搭載したい(interface))
