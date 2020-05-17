@@ -14,7 +14,8 @@ class Singleton
     public static function getInstance()
     {
         if(empty(self::$instance)){
-           self::$instance = new Singleton();
+            $class = __CLASS__;
+            self::$instance = new $class();
         }
         return self::$instance;
     }
@@ -43,5 +44,13 @@ echo "<br>";
 //同じインスタンスが戻ってくる
 $singleton2 = Singleton::getInstance();
 echo $singleton2->getId();
+echo "<br>";
 
+$singleton3 = Singleton::getInstance();
+echo $singleton3->getId();
+echo "<br>";
+
+$singleton4 = Singleton::getInstance();
+echo $singleton4->getId();
+echo "<br>";
 ?>
