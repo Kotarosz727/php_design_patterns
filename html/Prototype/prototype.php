@@ -144,6 +144,8 @@ function executeCopy(MenuManager $manager, $menu_code){
     $menu2 = $manager->create($menu_code);//copy
 
     $menu1->changeComment(1, ["date"=>"2018-06-27", "comment"=>"大盛りサービスは終了しました"]);
+    $menu2->changeComment(1, ["date"=>"2018-06-27", "comment"=>"大盛りサービスは終了しました"]);
+    $menu2->changeComment(2, ["date"=>"2018-06-27", "comment"=>"大盛りサービスは終了しました!!!"]);
     
     echo $menu1->display();
     echo $menu2->display();
