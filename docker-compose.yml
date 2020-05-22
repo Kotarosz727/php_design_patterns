@@ -7,4 +7,4 @@ services:
       - ./php.ini:/usr/local/etc/php/php.ini
       - ./html:/var/www/html
     ports:
-      - 8080:80
+      - ${port}:80
