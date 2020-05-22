@@ -79,24 +79,24 @@ class VanillaCoffee implements Coffee
     }
 }
 
-$someCoffee = new SimpleCoffee();
-echo $someCoffee->getCost();
-echo $someCoffee->getDiscription();
-echo "<br>";
-
-$someCoffee = new MilkCoffee($someCoffee);
-echo $someCoffee->getCost();
-echo $someCoffee->getDiscription();
-echo "<br>";
-
-// $someCoffee = new WhipCoffee($someCoffee);
+// $someCoffee = new SimpleCoffee();
 // echo $someCoffee->getCost();
 // echo $someCoffee->getDiscription();
 // echo "<br>";
 
-// $someCoffee = new VanillaCoffee($someCoffee);
-// echo $someCoffee->getCost();
-// echo $someCoffee->getDiscription();
-// echo "<br>";
+$someCoffee = new MilkCoffee(new SimpleCoffee());
+echo $someCoffee->getCost();
+echo $someCoffee->getDiscription();
+echo "<br>";
+
+$someCoffee = new WhipCoffee($someCoffee);
+echo $someCoffee->getCost();
+echo $someCoffee->getDiscription();
+echo "<br>";
+
+$someCoffee = new VanillaCoffee($someCoffee);
+echo $someCoffee->getCost();
+echo $someCoffee->getDiscription();
+echo "<br>";
 
 ?>
